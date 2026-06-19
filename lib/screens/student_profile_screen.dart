@@ -18,7 +18,7 @@ class _StudentProfileScreenState
   bool isLoading = true;
 
   final String studentName = "Abu Baker";
-  final String studentId = "STU-2025-0042";
+  final String studentId = "EDU-2022-2612";
   final String department =
       "Computer Science & Engineering";
 
