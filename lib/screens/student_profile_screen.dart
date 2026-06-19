@@ -19,8 +19,7 @@ class _StudentProfileScreenState
 
   final String studentName = "Abu Baker";
   final String studentId = "EDU-2022-2612";
-  final String department =
-      "Computer Science & Engineering";
+  final String department = "Computer Science & Engineering";
 
   @override
   void initState() {
