@@ -4,11 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'screens/student_profile_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const StudentProfileApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class StudentProfileApp extends StatelessWidget {
+  const StudentProfileApp({super.key});
 
   @override
   Widget build(BuildContext context) {
