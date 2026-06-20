@@ -1,9 +1,8 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-
 import '../widgets/profile_card_widget.dart';
 import '../widgets/shimmer_loading_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class StudentProfileScreen extends StatefulWidget {
   const StudentProfileScreen({super.key});
@@ -38,32 +37,33 @@ class _StudentProfileScreenState
       builder: (_) {
         return Dialog(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(20.r),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(20.w),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Row(
+                Row(
                   children: [
                     Icon(
                       Icons.school,
                       color: Colors.indigo,
+                      size: 22.sp,
                     ),
-                    SizedBox(width: 8),
+                    SizedBox(width: 8.w),
                     Text(
                       "Student Details",
                       style: TextStyle(
-                        fontSize: 22,
+                        fontSize: 22.sp,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                   ],
                 ),
 
-                const SizedBox(height: 20),
+                SizedBox(height: 20.h),
 
                 Row(
                   children: [
@@ -97,13 +97,13 @@ class _StudentProfileScreenState
                   ],
                 ),
 
-                const SizedBox(height: 10),
+                 SizedBox(height: 10.h),
 
                 Row(
                   children: [
-                    const Icon(
+                     Icon(
                       Icons.badge,
-                      size: 18,
+                      size: 18.sp,
                       color: Colors.indigo,
                     ),
                     const SizedBox(width: 8),
@@ -131,7 +131,7 @@ class _StudentProfileScreenState
                   ],
                 ),
 
-                const SizedBox(height: 10),
+                SizedBox(height: 10.h),
 
                 Row(
                   crossAxisAlignment:
@@ -205,26 +205,26 @@ class _StudentProfileScreenState
         backgroundColor: Colors.indigo,
         elevation: 0,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           "Student Profile",
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w600,
-            fontSize: 18,
+            fontSize: 18.sp,
           ),
         ),
       ),
       body: Center(
-        child: isLoading
-            ? const ShimmerLoadingWidget()
-            : ProfileCardWidget(
-          studentName: studentName,
-          studentId: studentId,
-          department: department,
-          onViewDetails:
-          showStudentDialog,
-          onMarkPresent:
-          markPresent,
+        child: SingleChildScrollView(
+          child: isLoading
+              ? const ShimmerLoadingWidget()
+              : ProfileCardWidget(
+            studentName: studentName,
+            studentId: studentId,
+            department: department,
+            onViewDetails: showStudentDialog,
+            onMarkPresent: markPresent,
+          ),
         ),
       ),
     );
